@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Jadwal Dokter | Pekanbaru Medical Center</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/Logo RS PMC original.jpg" rel="icon">
+  <link href="assets/img/Logo RS PMC original.jpg" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+ 
+</head>
+
+<body class="starter-page-page">
+
+  <header id="header" class="header sticky-top">
+
+    <div class="topbar d-flex align-items-center">
+      <div class="container d-flex justify-content-center justify-content-md-between">
+        <div class="contact-info d-flex align-items-center">
+          <i class="bi bi-envelope d-flex align-items-center"><a href="https://mail.google.com/mail/u/0/#inbox?compose=DmwnWrRlQQFBJfLdFFdkFBMDgJbrSTtKZjPBbZDkcBLxxbXrLmxxvKKNrGWFhMxThTFJnGCdTTKL">rspmc.pku@gmail.com</a></i>
+          <i class="bi bi-phone d-flex align-items-center ms-4"><span>0761-848100</span></i>
+        </div>
+        <div class="social-links d-none d-md-flex align-items-center">
+            <a href="https://x.com/rumahsakitpmc" class="twitter">
+              <i class="bi bi-twitter-x"></i>
+            </a>
+            <a href="https://www.instagram.com/rspmc/?hl=id" class="instagram">
+              <i class="bi bi-instagram"></i>
+            </a>
+          </div>
+      </div>
+    </div><!-- End Top Bar -->
+
+    <div class="branding d-flex align-items-center">
+
+        <div class="container position-relative d-flex align-items-center justify-content-between">
+            <a href="index.html" class="logo d-flex align-items-center me-auto">
+    
+              <!-- Uncomment the line below if you also wish to use an image logo -->
+               <img src="assets/img/Logo RS PMC original.jpg" alt=""> 
+              <h1 class="sitename">Pekanbaru Medical Center</h1>
+            </a>
+
+        <nav id="navmenu" class="navmenu">
+          <ul>
+            <li><a href="tentang.html">Tentang</a></li>
+            <li class="dropdown"><a href="#"><span>Pelayanan</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+              <!-- <ul>
+                <li><a href="poliklinik.html">Rawat Jalan</a></li>
+                <li><a href="#">Jadwal Inap</a></li>
+                <li><a href="#">Artikel Kesehatan</a></li>
+                <li><a href="#">Fasilitias Penunjang</a></li>
+                <li><a href="#">Fasilitas Umum</a></li>
+              </ul> -->
+            <li><a href="poliklinik.html">Poliklinik</a></li>
+
+            <li class="dropdown"><a href="#"><span>Dokter</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+              <ul>
+                <!-- <li><a href="#">Cari Dokter</a></li> -->
+                <li><a href="jadwal_dokter.html">Jadwal Dokter</a></li>
+              </ul>
+            <li><a href="#contact">Kontak</a></li>
+          </ul>
+          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        </nav>
+
+      </div>
+
+    </div>
+
+  </header>
+
+  <main class="main">
+
+    <!-- Doctors Section --> 
+    <section id="doctors" class="doctors section">
+
+      <!-- Section Title --> 
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Jadwal Dokter</h2>
+      </div>
+      <!-- End Section Title -->
+
+
+      <div class="search-container">
+    <input type="text" id="searchInput" placeholder="Cari dokter">
+    <button onclick="searchDoctor()">Cari</button>
+     </div>
+       <!-- kelompok dokter-->
+    <div class="cards" id="doctorCards">   
+    </div>
+
+  <script>
+  const doctors = [
+      {
+        name: 'dr. Alina Nasution, SpA, MPH',
+        specialty: 'Spesialis Anak',
+        image : 'assets/img/dokter/ikon_dokter.png',
+        status : false,
+        schedule: [
+          { day: 'Senin  :', time: '13:00-15:00' },
+          { day: 'Selasa  :', time: '13:00-15:00' },
+          { day: 'Rabu  :', time: '13:00-15:00' },
+          { day: 'Kamis  :', time: '13:00-16:00' },
+          { day: 'Jumat  :', time: '13:00-15:00' },
+          { day: 'Sabtu', time: '13:00-16:00' },  
+        ]
+       
+      },
+      {
+        name: 'dr. Muchtar Kesuma Hayatullah, SpA',
+        specialty: 'Spesialis Anak',
+        image : 'assets/img/dokter/muchtar.png',
+        status: false,
+        schedule: [
+          { day: 'Senin',time: '14:00 - 16:00' },
+          { day: 'Selasa', time: '14:00 - 16:00' },
+          { day: 'Rabu' , time: '14:00 - 16:00' },
+          { day: 'Kamis' , time: '14:00 - 16:00' },
+          { day: 'Jumat', time: '14:00 - 16:00' },
+        ]
+      },
+      
+      {
+        name: 'dr. Nopian Hidayat, SpAn',
+        specialty: 'Spesialis Anastesi',
+        schedule: [
+          { day: 'Senin', time: '14:30 - 20:00' },
+          { day: 'Kamis', time: '14:30 - 20:00' },
+          { day: 'Sabtu', time: '14:30 - 20:00' },
+          { day: 'Minggu', time: '14:30 - 20:00' }
+        ]
+      },
+      {
+        name: 'dr. Sukma Wijaya, SpAN',
+        specialty: 'Spesialis Anastesi',
+        schedule: [
+          { day: 'Sabtu', time: '15:00 - 20:00' },
+          { day: 'Minggu', time: '14:30 - 20:00' }
+        ]
+      },
+      {
+        name: 'dr. Taufik Hidayat, SpB',
+        specialty: 'Spesialis Bedah',
+        schedule: [
+          { day: 'Senin', time: '16:00 - 17:30' },
+          { day: 'Selasa', time: '16:00 - 17:30' },
+          { day: 'Rabu', time: '16:00 - 17:30' },
+          { day: 'Kamis', time: '16:00 - 17:30' },
+          { day: 'Jumat', time: '16:00 - 17:30' }
+        ]
+      },
+      {
+        name: 'dr. Andi Rizaldi,SpB',
+        specialty: 'Spesialis Bedah',
+        schedule: [
+          { day: 'Senin', time: '14:30 - 16:00' },
+          { day: 'Rabu', time: '07:00 - 08:30' },
+          { day: 'Jumat', time: '11:30 - 14:00' },
+          { day: 'Sabtu', time: '12:30 - 15:00' }
+        ]
+      },
+      {
+        name: 'dr. Nurshal Hasbi, SpB',
+        specialty: 'Spesialis Bedah',
+        schedule: [
+          { day: 'Senin', time: '09:00 - 12:00' },
+          { day: 'Selasa', time: '09:00 - 12:00' },
+          { day: 'Rabu', time: '09:00 - 12:00' },
+          { day: 'Kamis', time: '09:00 - 12:00' },
+          { day: 'Jumat', time: '09:00 - 11:00' }
+        ]
+      },
+      {
+        name: 'dr. Gilang Dwipa Decroli, SpB',
+        specialty: 'Spesialis Bedah',
+        schedule: [
+          { day: 'Senin', time: '16:00 - 17:30' },
+          { day: 'Selasa', time: '16:00 - 17:30' },
+          { day: 'Rabu', time: '16:00 - 17:30' },
+          { day: 'Kamis', time: '16:00 - 17:30' },
+          { day: 'Jumat', time: '16:00 - 17:30' },
+          { day: 'Sabtu', time: '16:00 - 17:30' }
+        ]
+      },
+      {
+        name: 'dr. Andrea Valentino, SpBS',
+        specialty: 'Spesialis Bedah Saraf',
+        schedule: [
+          { day: 'Senin', time: '14:30 - 16:00' },
+          { day: 'Kamis', time: '14:30 - 16:00' },
+          ]
+      },
+      {
+        name: 'drg. Alia Anindita ',
+        specialty: 'Spesialis Gigi',
+        image : 'assets/img/dokter/ikon_dokter.png',
+        schedule: [
+          { day: 'Senin', time: '14:30 - 16:00' },
+          { day: 'Rabu', time: '07:00 - 08:30' },
+          { day: 'Jumat', time: '11:30 - 14:00' },
+          { day: 'Sabtu', time: '12:30 - 15:00' }
+        ]
+      },
+      {
+        name: 'drg. Aldhi Nadir ',
+        specialty: 'Spesialis Gigi',
+        status: true,
+        schedule: [
+          /*{ day: 'Senin', time: '14:30 - 16:00' },
+          { day: 'Rabu', time: '07:00 - 08:30' },
+          { day: 'Jumat', time: '11:30 - 14:00' },
+          { day: 'Sabtu', time: '12:30 - 15:00' } */
+        ]
+      },
+      {
+        name: 'drg. Ocky Pranata, SpBM  ',
+        specialty: 'Spesialis Gigi Bedah Mulut',
+        schedule: [
+          { day: 'Senin', time: '14:30 - 16:00' },
+          { day: 'Rabu', time: '07:00 - 08:30' },
+          { day: 'Jumat', time: '11:30 - 14:00' },
+          { day: 'Sabtu', time: '12:30 - 15:00' }
+        ]
+      },
+      {
+        name: 'dr. Pradita Diah Permatasari, SpJP ',
+        specialty: 'Spesialis Jantung dan Pembuluh Darah',
+        image : 'assets/img/dokter/ikon_dokter.png',
+        schedule: [
+          { day: 'Senin', time: '16:15 - 17:45' },
+          { day: 'Rabu', time: '08:00 - 15:30' },
+        ]
+      },
+      {
+        name: 'dr. Ricky Juliardi Mezal, Sp.JP ',
+        specialty: 'Spesialis Jantung dan Pembuluh Darah',
+        schedule: [
+          { day: 'Selasa', time: '15:30 - 18:00' },
+          { day: 'Kamis', time: '15:30 - 18:00' },
+          { day: 'Jumat', time: '15:30 - 18:00' },
+        ]
+      },
+      {
+        name: 'dr. Nining Gilang Sari, SpKJ. M.ked(KJ) ',
+        specialty: 'Spesialis Jiwa',
+        image : 'assets/img/dokter/ikon_dokter.png',
+        schedule: [
+          { day: 'Senin', time: '14:30 - 17:30' },
+          { day: 'Selasa', time: '14:30 - 17:30' },
+          { day: 'Rabu', time: '14:30 - 17:30' },
+          { day: 'Kamis', time: '14:30 - 17:30' },
+          { day: 'Jumat', time: '14:30 - 17:30' },
+        ]
+      },
+      {
+        name: 'dr. Heffi Anindya Putri, SpDV  ',
+        specialty: 'Spesialis Kulit dan Kelamin',
+        image : 'assets/img/dokter/ikon_dokter.png',
+        schedule: [
+          { day: 'Senin', time: '15:30 - 17:30' },
+          { day: 'Selasa', time: '15:30 - 17:30' },
+          { day: 'Rabu', time: '15:30 - 17:30' },
+          { day: 'Kamis', time: '15:30 - 17:30' },
+          { day: 'Jumat', time: '15:30 - 17:30' },
+          { day: 'Sabtu', time: '15:30 - 17:30' },
+        ]
+      },
+      {
+        name: 'dr. Bagus Sidharto,  SpM',
+        specialty: 'Spesialis Mata',
+        schedule: [
+          { day: 'Senin', time: '08:30 - 12:30' },
+          { day: 'Senin', time: '15:45 - 17:30' },
+          { day: 'Selasa', time: '08:30 - 12:30' },
+          { day: 'Selasa', time: '15:30 - 17:30' },
+          { day: 'Rabu', time: '08:30 - 12:30' },
+          { day: 'Rabu', time: '15:30 - 17:30' },
+          { day: 'Kamis', time: '08:30 - 12:30' },
+          { day: 'Kamis', time: '15:30 - 17:30' },
+          { day: 'Jumat', time: '08:30 - 11:00' },
+          { day: 'Jumat', time: '15:30 - 17:30' },
+          { day: 'Sabtu', time: '08:00 - 11:00' },
+        ]
+      },
+      {
+        name: 'dr. Ihsan Suheimi, SpOG ',
+        specialty: 'Spesialis Obgyn',
+        schedule: [
+          { day: 'Senin', time: '12:00 - 14:00' },
+          { day: 'Selasa', time: '08:00 - 11:00' },
+          { day: 'Rabu', time: '08:00 - 11:00' },
+          { day: 'Kamis', time: '08:00 - 11:00' },
+          { day: 'Jumat', time: '08:00 - 11:00' },
+          { day: 'Sabtu', time: '08:00 - 11:00' }
+        ]
+      },
+      {
+        name: 'dr. Rika Effendy, SpOG ',
+        specialty: 'Spesialis Obgyn',
+        image : 'assets/img/dokter/ikon_dokter.png',
+        schedule: [
+          { day: 'Selasa', time: '14:00 - 16:00' },
+          { day: 'Kamis', time: '14:00 - 16:00' },
+        ]
+      },
+      {
+        name: 'dr. Jon madi, SpOG ',
+        specialty: 'Spesialis Obgyn',
+        schedule: [
+          { day: 'Senin', time: '14:30 - 16:00' },
+          { day: 'Selasa', time: '14:30 - 16:00' },
+          { day: 'Rabu', time: '14:30 - 16:00' },
+          { day: 'Kamis', time: '14:30 - 16:00' },
+          { day: 'Jumat', time: '14:30 - 16:00' },
+          { day: 'Sabtu', time: '14:30 - 16:00' }
+        ]
+      },
+      {
+        name: 'dr. Ferriyanto Sutiono, SpOG ',
+        specialty: 'Spesialis Obgyn',
+        schedule: [
+          { day: 'Senin', time: '07:00 - 10:00' },
+          { day: 'Selasa', time: '10:00 - 12:00' },
+          { day: 'Rabu', time: '07:00 - 10:00' },
+          { day: 'Kamis', time: '10:00 - 12:00' },
+          { day: 'Jumat', time: '07:00 - 10:00' },
+          { day: 'Sabtu', time: '10:00 - 12:00' }
+        ]
+      },
+      {
+        name: 'dr. Yohanes Iddo Adventa, SpOG ',
+        specialty: 'Spesialis Obgyn',
+        image : 'assets/img/dokter/Yohanes.png',
+        schedule: [
+          { day: 'Sabtu', time: '08:00 - 11:00' }
+        ]
+      },
+      {
+        name: 'dr. Rendy Adhitya Pratama, SpOG ',
+        specialty: 'Spesialis Obgyn',
+        schedule: [
+          { day: 'Senin', time: '14:00 - 16:00' },
+          { day: 'Selasa', time: '12:00 - 14:00' },
+          { day: 'Jumat', time: '14:00 - 16:00' },
+          { day: 'Sabtu', time: '14:00 - 16:00' }
+        ]
+      },
+      {
+        name: 'dr. Aditya Warman, SpOT ',
+        specialty: 'Spesialis Orthopedi',
+        schedule: [
+          { day: 'Senin', time: '14:30 - 17:00' },
+          { day: 'Selasa', time: '14:30 - 17:00' },
+          { day: 'Rabu', time: '14:30 - 17:00' },
+          { day: 'Kamis', time: '14:30 - 17:00' },
+          { day: 'Jumat', time: '08:00 - 10:00' },
+          { day: 'Sabtu', time: '09:00 - 12:00' }
+        ]
+      },
+      {
+        name: 'dr. Devita Mirayana, SpP  ',
+        specialty: 'Spesialis Paru',
+        schedule: [
+          { day: 'Senin', time: '15:00 - 17:00' },
+          { day: 'Selasa', time: '15:00 - 17:30' },
+          { day: 'Rabu', time: '15:00 - 17:30' },
+          { day: 'Kamis', time: '15:00 - 17:30' },
+          { day: 'Jumat', time: '15:00 - 17:30' },
+          { day: 'Sabtu', time: '15:00 - 17:00' }
+        ]
+      },
+      {
+        name: 'dr. Alzi Kardiasyah, M.Ked (Paru), Sp.P',
+        specialty: 'Spesialis Paru',
+        schedule: [
+          { day: 'Senin', time: '08:00 - 12:00' },
+          { day: 'Selasa', time: '08:00 - 12:00' },
+          { day: 'Rabu', time: '08:00 - 12:00' },
+          { day: 'Kamis', time: '08:00 - 12:00' },
+          { day: 'Jumat', time: '08:00 - 12:00' },
+          { day: 'Sabtu', time: '08:00 - 12:00' }
+        ]
+      },
+      {
+        name: 'dr. Lucyana A.D. T., SpPK',
+        specialty: 'Spesialis Patologi Klinik',
+        image : 'assets/img/dokter/Lucyana.png',
+        status : false,
+        schedule: [
+          { day: 'Senin', time: '14:30 - 18:00' },
+          { day: 'Selasa', time: '14:30 - 18:00' },
+          { day: 'Rabu', time: '14:30 - 18:00' },
+          { day: 'Kamis', time: '14:30 - 18:00' },
+          { day: 'Jumat', time: '14:30 - 18:00' },
+          { day: 'Sabtu', time: '14:30 - 18:00' },
+          { day: 'Minggu', time: '14:30 - 18:00' }
+        ]
+      },
+      {
+        name: 'dr. Febrila Harmaini, Dr. SpPD  ',
+        specialty: 'Spesialis Penyakit Dalam',
+        image : 'assets/img/dokter/Febrilla.png',
+        schedule: [
+          { day: 'Senin', time: '09:45 - 20:30' },
+          { day: 'Selasa', time: '09:45 - 20:30' },
+          { day: 'Kamis', time: '09:45 - 20:30' },
+          { day: 'Jumat', time: '08:00 - 11:00' },
+          { day: 'Sabtu', time: '09:45 - 17:00' }
+        ]
+      },
+      {
+        name: 'dr. Andikha Putra, SpPD',
+        specialty: 'Spesialis Penyakit Dalam',
+        schedule: [
+          { day: 'Senin', time: '16:30 - 19:30' },
+          { day: 'Selasa', time: '16:30 - 19:30' },
+          { day: 'Rabu', time: '17:30 - 19:30' },
+          { day: 'Kamis', time: '17:30 - 19:30' },
+          { day: 'Jumat', time: '16:30 - 19:30' },
+        ]
+      },
+      {
+        name: 'dr. Armelia Adel Abdullah, SpRad  ',
+        specialty: 'Spesialis Radiologi',
+        image : 'assets/img/dokter/ikon_dokter.png',
+        schedule: [
+          { day: 'Senin', time: '20:00 - 23:59' },
+          { day: 'Selasa', time: '20:00 - 23:59' },
+          { day: 'Rabu', time: '08:00 - 12:00' },
+          { day: 'Jumat', time: '20:00 - 23:59' },
+          { day: 'Sabtu', time: '08:00 - 12:00' },
+          { day: 'Minggu', time: '08:00 - 12:00' }
+        ]
+      },
+      {
+        name: 'dr. Prisca Ockta Putri, dr, Sp.KFR ',
+        specialty: 'Spesialis Rehabilitas Medis',
+        image : 'assets/img/dokter/ikon_dokter.png',
+        schedule: [
+          { day: 'Senin', time: '14:00 - 18:00' },
+          { day: 'Kamis', time: '08:00 - 10:00' },
+          { day: 'Kamis', time: '14:00 - 17:00' },
+          { day: 'Jumat', time: '14:00 - 18:00' },
+          { day: 'Sabtu', time: '08:00 - 10:00' },
+          { day: 'Sabtu', time: '13:00 - 15:00' }
+        ]
+      },
+      {
+        name: 'dr. M.Iqbal, M. Kes, SpS ',
+        specialty: 'Spesialis Saraf',
+        schedule: [
+          { day: 'Senin', time: '14:15 - 16:45' },
+          { day: 'Selasa', time: '14:15 - 16:45' },
+          { day: 'Rabu', time: '14:15 - 16:45' },
+          { day: 'Kamis', time: '14:15 - 16:45' },
+          { day: 'Jumat', time: '14:15 - 16:45' },
+          { day: 'Sabtu', time: '14:15 - 16:45' }
+        ]
+      },
+      {
+        name: 'dr. Nella Harisa Noviani, SpS ',
+        specialty: 'Spesialis Saraf',
+        image : 'assets/img/dokter/ikon_dokter.png',
+        schedule: [
+          { day: 'Senin', time: '07:00 - 09:00' },
+          { day: 'Selasa', time: '07:00 - 09:00' },
+          { day: 'Rabu', time: '07:00 - 09:00' },
+          { day: 'Kamis', time: '07:00 - 09:00' },
+          { day: 'Jumat', time: '07:00 - 09:00' }
+        ]
+      },
+      {
+        name: 'dr. Yudi Mahardian ',
+        specialty: 'Umum',
+        schedule: [
+          { day: 'Senin', time: '08:00 - 20:00' },
+          { day: 'Selasa', time: '10:00 - 22:00' },
+          { day: 'Rabu', time: '08:00 - 20:00' },
+          { day: 'Kamis', time: '10:00 - 22:00' },
+          { day: 'Jumat', time: '08:00 - 20:00' },
+          { day: 'Sabtu', time: '10:00 - 22:00' },
+          { day: 'Minggu', time: '10:00 - 22:00' },
+          { day: 'Libur Nasional', time: '08:00 - 20:00' }
+        ]
+      },
+      {
+        name: 'dr. Nora Wirna ',
+        specialty: 'Umum',
+        image : 'assets/img/dokter/ikon_dokter.png',
+        schedule: [
+          { day: 'Senin', time: '08:00 - 20:00' },
+          { day: 'Selasa', time: '08:00 - 20:00' },
+          { day: 'Rabu', time: '08:00 - 20:00' },
+          { day: 'Kamis', time: '08:00 - 20:00' },
+          { day: 'Jumat', time: '08:00 - 20:00' },
+          { day: 'Sabtu', time: '08:00 - 20:00' },
+          { day: 'Minggu', time: '08:00 - 20:00' },
+          { day: 'Libur Nasional', time: '08:00 - 20:00' }
+        ]
+      },
+      {
+        name: 'dr. Ririani  ',
+        specialty: 'Umum',
+        image : 'assets/img/dokter/ikon_dokter.png',
+        schedule: [
+          { day: 'Senin', time: '08:00 - 20:00' },
+          { day: 'Selasa', time: '08:00 - 20:00' },
+          { day: 'Rabu', time: '08:00 - 20:00' },
+          { day: 'Kamis', time: '08:00 - 20:00' },
+          { day: 'Jumat', time: '08:00 - 20:00' },
+          { day: 'Sabtu', time: '08:00 - 20:00' },
+          { day: 'Minggu', time: '08:00 - 20:00' },
+          { day: 'Libur Nasional', time: '08:00 - 20:00' }
+        ]
+      },
+      {
+        name: 'dr. Novita Pahmela Wahyuni  ',
+        specialty: 'Umum',
+        image : 'assets/img/dokter/ikon_dokter.png',
+        schedule: [
+          { day: 'Senin', time: '07:00 - 14:00' },
+          { day: 'Selasa', time: '07:00 - 14:00' },
+          { day: 'Kamis', time: '07:00 - 14:00' },
+          { day: 'Jumat', time: '07:00 - 14:00' },
+          { day: 'Sabtu', time: '07:00 - 14:00' },
+          { day: 'Minggu', time: '07:00 - 14:00' },
+          { day: 'Libur Nasional', time: '07:00 - 14:00' }
+        ]
+      },
+      {
+        name: 'dr. Seputria Indah Rahmayanti  ',
+        specialty: 'Umum',
+        image : 'assets/img/dokter/ikon_dokter.png',
+        schedule: [
+          { day: 'Senin', time: '07:00 - 14:00' },
+          { day: 'Selasa', time: '07:00 - 14:00' },
+          { day: 'Kamis', time: '07:00 - 14:00' },
+          { day: 'Jumat', time: '07:00 - 14:00' },
+          { day: 'Sabtu', time: '07:00 - 14:00' },
+          { day: 'Minggu', time: '07:00 - 14:00' },
+          { day: 'Libur Nasional', time: '07:00 - 14:00' }
+        ]
+      },
+      {
+        name: 'dr. Rizky Fairuz Balqis  ',
+        specialty: 'Umum',
+        image : 'assets/img/dokter/rizki_fairus.png',
+        status : false,
+        schedule: [
+          { day: 'Senin', time: '08:00 - 20:00' },
+          { day: 'Selasa', time: '08:00 - 20:00' },
+          { day: 'Rabu', time: '08:00 - 20:00' },
+          { day: 'Kamis', time: '08:00 - 20:00' },
+          { day: 'Jumat', time: '08:00 - 20:00' },
+          { day: 'Sabtu', time: '08:00 - 20:00' },
+          { day: 'Minggu', time: '08:00 - 20:00' },
+          { day: 'Libur Nasional', time: '08:00 - 20:00' }
+        ]
+      },
+      {
+        name: 'dr. Chyntya Styaningrum  ',
+        specialty: 'Umum',
+        image : 'assets/img/dokter/ikon_dokter.png',
+        schedule: [
+          { day: 'Senin', time: '07:00 - 14:00' },
+          { day: 'Rabu', time: '07:00 - 14:00' },
+          { day: 'Kamis', time: '07:00 - 14:00' },
+          { day: 'Jumat', time: '07:00 - 14:00' },
+          { day: 'Sabtu', time: '07:00 - 14:00' },
+          { day: 'Minggu', time: '07:00 - 14:00' },
+          { day: 'Libur Nasional', time: '07:00 - 14:00' }
+        ]
+      },
+      {
+        name: 'dr. Nadya Fitriana ',
+        specialty: 'Umum',
+        image : 'assets/img/dokter/ikon_dokter.png',
+        schedule: [
+          { day: 'Senin', time: '07:00 - 14:00' },
+          { day: 'Selasa', time: '07:00 - 14:00' },
+          { day: 'Rabu', time: '07:00 - 14:00' },
+          { day: 'Jumat', time: '07:00 - 14:00' },
+          { day: 'Sabtu', time: '07:00 - 14:00' },
+          { day: 'Minggu', time: '07:00 - 14:00' },
+          { day: 'Libur Nasional', time: '07:00 - 14:00' }
+        ]
+      },
+      {
+        name: 'dr. Prayugo Antonio ',
+        specialty: 'Umum',
+        status : true,
+        schedule: [
+          /* { day: 'Senin', time: '08:00 - 20:00' },
+          { day: 'Selasa', time: '08:00 - 20:00' },
+          { day: 'Rabu', time: '08:00 - 20:00' },
+          { day: 'Kamis', time: '08:00 - 20:00' },
+          { day: 'Jumat', time: '08:00 - 20:00' },
+          { day: 'Sabtu', time: '08:00 - 20:00' },
+          { day: 'Minggu', time: '08:00 - 20:00' },
+          { day: 'Libur Nasional', time: '08:00 - 20:00' } */
+        ]
+      },
+      {
+        name: 'dr. Irvan Halim ',
+        specialty: 'Umum',
+        schedule: [
+          { day: 'Senin', time: '08:00 - 20:00' },
+          { day: 'Selasa', time: '08:00 - 20:00' },
+          { day: 'Rabu', time: '08:00 - 20:00' },
+          { day: 'Kamis', time: '08:00 - 20:00' },
+          { day: 'Jumat', time: '08:00 - 20:00' },
+          { day: 'Sabtu', time: '08:00 - 20:00' },
+          { day: 'Minggu', time: '08:00 - 20:00' },
+          { day: 'Libur Nasional', time: '08:00 - 20:00' }
+        ]
+      },
+      {
+        name: 'dr. Andi Aflah Afif Fitrasia',
+        specialty: 'Umum',
+        image : 'assets/img/dokter/andi.png',
+        status : false,
+        schedule: [
+          { day: 'Senin', time: '07:00 - 14:00' },
+          { day: 'Selasa', time: '07:00 - 14:00' },
+          { day: 'Rabu', time: '07:00 - 14:00' },
+          { day: 'Kamis', time: '07:00 - 14:00' },
+          { day: 'Jumat', time: '07:00 - 14:00' },
+          { day: 'Sabtu', time: '07:00 - 14:00' },
+          { day: 'Minggu', time: '07:00 - 14:00' }
+        ]
+      },
+      {
+        name: 'dr. Qurnia Siti Hurul Aini ',
+        specialty: 'Umum',
+        image : 'assets/img/dokter/Qurnia.png ',
+        status: true,
+        schedule: [
+          { day: 'Senin', time: '07:00 - 14:00' },
+          { day: 'Selasa', time: '07:00 - 14:00' },
+          { day: 'Rabu', time: '07:00 - 14:00' },
+          { day: 'Jumat', time: '07:00 - 14:00' },
+          { day: 'Sabtu', time: '07:00 - 14:00' },
+          { day: 'Minggu', time: '07:00 - 14:00' },
+          { day: 'Libur Nasional', time: '07:00 - 14:00' }
+        ]
+      }
+      ];
+
+  let currentPage = 1;
+  const itemsPerPage = 10;
+
+  function renderDoctors(list) {
+    const container = document.getElementById('doctorCards');
+    container.innerHTML = '';
+
+    const start = (currentPage - 1) * itemsPerPage;
+    const end = start + itemsPerPage;
+    const paginated = list.slice(start, end);
+
+    paginated.forEach(doc => {
+      const card = document.createElement('div');
+      card.className = 'card';
+
+      let scheduleHtml = '';
+
+    if (doc.status === true) {
+      // Jika dokter cuti
+      scheduleHtml = `<div class="status"><strong>Sedang Cuti</strong></div>`;
+    } else {
+      // Jika dokter aktif, tampilkan jadwal
+      scheduleHtml = `
+        <div class="schedule">
+          ${doc.schedule.map(item => `
+            <div class="schedule-row">
+              <span>${item.day}</span>
+              <span>${item.time}</span>
+            </div>
+          `).join('')}
+        </div>`;
+    }
+
+    card.innerHTML = `
+      <div class="profile-pic">
+        <img src="${doc.image}" alt="Foto ${doc.name}">
+      </div><br>
+      <div class="doctor-name">${doc.name}</div>
+      <div class="doctor-specialty">${doc.specialty}</div>
+      ${scheduleHtml}
+    `;
+
+      container.appendChild(card);
+    });
+
+    renderPagination(list);
+  }
+
+  function renderPagination(list) {
+    const pagination = document.getElementById('pagination');
+    pagination.innerHTML = '';
+
+    const totalPages = Math.ceil(list.length / itemsPerPage);
+    for (let i = 1; i <= totalPages; i++) {
+      const btn = document.createElement('button');
+      btn.innerText = i;
+      btn.onclick = () => {
+        currentPage = i;
+        renderDoctors(list);
+      };
+      if (i === currentPage) {
+        btn.disabled = true;
+        btn.style.fontWeight = 'bold';
+      }
+      pagination.appendChild(btn);
+    }
+  }
+
+  function searchDoctor() {
+    const query = document.getElementById('searchInput').value.toLowerCase();
+    const filtered = doctors.filter(doc =>
+      doc.name.toLowerCase().includes(query) ||
+      doc.specialty.toLowerCase().includes(query)
+    );
+    currentPage = 1;
+    renderDoctors(filtered);
+  }
+
+  // Initial render
+  window.onload = function () {
+    renderDoctors(doctors);
+  };
+</script>
+<div id="pagination" class="pagination"></div>
+
+
+      
+
+
+  </section>
+    
+
+  </main>
+
+  <footer id="footer" class="footer light-background">
+
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-4 col-md-6 footer-about">
+          <a href="index.html" class="logo d-flex align-items-center">
+            <span class="sitename">Rumah Sakit Pekanbaru Medical Center</span>
+          </a>
+          <div class="footer-contact pt-3">
+            <p>Jl. Lembaga Permasyarakatan No.25, Suka Maju, Kec. Sail </p>
+            <p>Kota Pekanbaru, Riau 28126</p>
+            <p class="mt-3"><strong>Phone:</strong> <span>0761 848100</span></p>
+            <p><strong>Email:</strong> <span>rspmc.pku@gmail.com</span></p>
+          </div>
+          <div class="social-links d-flex mt-4">
+            <a href="https://x.com/rumahsakitpmc" class="twitter">
+              <i class="bi bi-twitter-x"></i>
+            </a>
+            <a href="https://www.instagram.com/rspmc/?hl=id" class="instagram">
+              <i class="bi bi-instagram"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Home page</h4>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Tentang</a></li>
+            <li><a href="#services">Pelayanan</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Pelayanan kami</h4>
+          <ul>
+            <li><a href="#">Rawat Jalan</a></li>
+            <li><a href="#">Rawat Inap</a></li>
+            <li><a href="#">Artikel Kesehatan</a></li>
+            <li><a href="#">Fasilitas Umum</a></li>
+            <li><a href="#">Fasilitas Penunjang</a></li>
+          </ul>
+        </div>
+
+        
+
+      </div>
+    </div>
+
+    <div class="container copyright text-center mt-4">
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">Admin</strong> <span>All Rights Reserved</span></p>
+      <div class="credits">
+       
+        Designed by RS PMC
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
